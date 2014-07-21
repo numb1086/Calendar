@@ -79,9 +79,8 @@ class myCalendar
 		
 		//先印出該月空白天數
 		for(int i=0;i<spaceDay;i++) 
-		{
 			System.out.printf("%4s"," ");
-		}
+		
 		//在印出該月天數
 		for(int day=1;day<=monthDay;day++) 
 		{
