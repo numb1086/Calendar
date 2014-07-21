@@ -10,9 +10,6 @@
 
 /**********************************************************/
 
-
-
-
 /********************Method Analysis***********************/
 
 1.getCalendar()
@@ -29,8 +26,6 @@
 
   ->If the format is wrong,the console will show error message.
 
-
-
 2.isLeapYear()
 
   ->Judge if the year is leap year.
@@ -38,8 +33,6 @@
     ->if the year can be divided by 4 and 400 or can't divided
  
       by 100,it is a leap year.
-
-
 
 3.show()
 
