@@ -6,30 +6,49 @@ public class Calendar
 {
 	public static void main(String[] argv) 
 	{
-		int year,month;
+		int year,month,choice;
 		Scanner in = new Scanner(System.in);
 		//輸入年和月
-		System.out.print("Please input year:");
-		year = in.nextInt();
-		System.out.print("Please input month(1-12):");
+		System.out.println("1.判斷是否為閏年  2.輸入年月傳回有幾天  3.輸入年月日傳回星期幾 "
+				+ "4.輸入年月傳回整月  5.輸入年 傳回有幾個六日");
+		System.out.print("請選擇:");
+		choice = in.nextInt();
+		switch(choice)
+		{
+			case 1:
+				System.out.print("Please input year:");
+				year = in.nextInt();
+				MyCalendar myLeap = new MyCalendar(year);
+				if(myLeap.isLeapYear(year))
+					System.out.println(year + "年是閏年");
+				else 
+					System.out.println(year + "年不是閏年");
+		}
+/*		System.out.print("Please input month(1-12):");
 		month = in.nextInt();
 		//建立一個myCalendar的物件
-		myCalendar mCal = new myCalendar(year,month);
-		mCal.getCalendar();
+		MyCalendar myCal = new MyCalendar(year,month);
+		//判斷是否是閏年
+		myCal.isLeapYear(year);
+		myCal.getCalendar();*/
 	}
 }
 
-class myCalendar
+class MyCalendar
 {	
 	private int year;
 	private int month;
 	
-	public myCalendar(int year,int month)
+	public MyCalendar(int year,int month)
 	{
 		this.year = year;
 		this.month = month;
 	}
 	
+	public MyCalendar(int year)
+	{
+		this.year = year;
+	}
 	public void getCalendar()
 	{
 		int firstSpace = 1; //1月的空白天數，表示1月1日為星期一
@@ -66,7 +85,7 @@ class myCalendar
 	}
 	
 	//判斷該年是否為閏年
-	private boolean isLeapYear(int year)
+	public boolean isLeapYear(int year)
 	{
 		return ((year%400==0)||((year%4==0) && (year%100!=0)));
 	}
