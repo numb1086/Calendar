@@ -36,6 +36,7 @@ public class MyCalendar
 		return spaceDay[month-1];
 	}
 	
+	//印出該年該月天數
 	public int countDays(int year,int month)
 	{
 		//判斷該年2月天數
@@ -44,6 +45,7 @@ public class MyCalendar
 		return monthDay[month-1];
 	}
 	
+	//印出該年該月該日星期幾
 	public int countWeekDay(int year,int month,int day)
 	{
 		int weekDay;
@@ -74,6 +76,7 @@ public class MyCalendar
 		}
 	}
 	
+	//印出該年有幾個六日
 	public void showWeekend(int year)
 	{
 		int countSat = 0;
