@@ -15,7 +15,7 @@
   ->Select the method in MyCalendar object
 
 2.isLeapYear()
-  ->Judge if the year is leap year.
+  ->Judge if the year is a leap year.
 
     ->if the year can be divided by 4 and 400 or can't divided
  
@@ -25,7 +25,7 @@
   ->Calculate the space day of the month in the year we selected.
 
 4.showLeapYear()
-  ->Show if that year is leap year.
+  ->Show if that year is a leap year.
 
 5.showDays()
   ->Show how many days in that month of the selected year.
