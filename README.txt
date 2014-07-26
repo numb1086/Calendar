@@ -2,42 +2,42 @@
 
 /****************************Steps***************************/
 
-1.Input year and month
+1.Input your choice
 
-2.Establish an object to create a calendar
+2.Establish an object to select the mode
 
-3.Print out the calendar
+3.Print out the requirements
 
 /**********************************************************/
 
 /********************Method Analysis***********************/
-
-1.getCalendar()
-
-  ->Judge if the format of month is right.
-
-    ->If the year is leap year,the February day plus 1.
-    
-    ->Find the sapce day of each month in that year.
-
-    ->Send the space day and month day to the show() method
- 
-      to print the calendar.
-
-  ->If the format is wrong,the console will show error message.
+1.choice()
+  ->Select the method in MyCalendar object
 
 2.isLeapYear()
-
   ->Judge if the year is leap year.
 
     ->if the year can be divided by 4 and 400 or can't divided
  
       by 100,it is a leap year.
 
-3.show()
+3.firstSpace()
+  ->Calculate the space day of the month in the year we selected.
 
-  ->Use the space day and month day to print out the calendar.
+4.showLeapYear()
+  ->Show if that year is leap year.
 
+5.showDays()
+  ->Show how many days in that month of the selected year.
+
+6.showWeekDay()
+  ->Show what the day is in that month of the selected year.  
+
+7.showCalendar()
+  ->Print out the calendar.
+
+8.showWeekend()
+  ->Show how many Saturdays and Sundays in that year.
 
 /**************************Reference**************************/
 http://blog.yam.com/ewestein/article/16667621
