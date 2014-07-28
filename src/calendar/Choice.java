@@ -1,9 +1,9 @@
 /**************************************************************************
- * FileName				[ Choice.java ]
+ * FileName			[ Choice.java ]
  * PackageName			[ calendar ]
  * JavaProjectName		[ Calendar ]
- * Synopsis				[ This file is used to select MyCalendar methods ]
- * Author				[ Yong-Ting (Tony) Wu ]
+ * Synopsis			[ This file is used to select MyCalendar methods ]
+ * Author			[ Yong-Ting (Tony) Wu ]
  * Copyright			[ Copyleft(c) 2014 MITLAB, GIEE, NTUST, Taiwan ]
 ***************************************************************************/
 
@@ -27,41 +27,41 @@ public class Choice
 		
 		switch(mode)
 		{
-			case 1: //§PÂ_¬O§_¬°¶|¦~
-				System.out.print("½Ð¿é¤J¦~(>0): ");
+			case 1: //ï¿½Pï¿½_ï¿½Oï¿½_ï¿½ï¿½ï¿½|ï¿½~
+				System.out.print("ï¿½Ð¿ï¿½ï¿½Jï¿½~(>0): ");
 				year = in.nextInt();
 				myCal.showLeapYear(year);
 				break;
-			case 2: //¿é¤J¦~¤ë¶Ç¦^¦³´X¤Ñ
-				System.out.print("½Ð¿é¤J¦~(>0): ");
+			case 2: //ï¿½ï¿½ï¿½Jï¿½~ï¿½ï¿½ï¿½Ç¦^ï¿½ï¿½ï¿½Xï¿½ï¿½
+				System.out.print("ï¿½Ð¿ï¿½ï¿½Jï¿½~(>0): ");
 				year = in.nextInt();
-				System.out.print("½Ð¿é¤J¤ë(1-12): ");
+				System.out.print("ï¿½Ð¿ï¿½ï¿½Jï¿½ï¿½(1-12): ");
 				month = in.nextInt();
 				myCal.showDays(year,month);
 				break;
-			case 3: //¿é¤J¦~¤ë¤é¶Ç¦^¬P´Á´X
-				System.out.print("½Ð¿é¤J¦~(>0): ");
+			case 3: //ï¿½ï¿½ï¿½Jï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½Ç¦^ï¿½Pï¿½ï¿½ï¿½X
+				System.out.print("ï¿½Ð¿ï¿½ï¿½Jï¿½~(>0): ");
 				year = in.nextInt();
-				System.out.print("½Ð¿é¤J¤ë(1-12): ");
+				System.out.print("ï¿½Ð¿ï¿½ï¿½Jï¿½ï¿½(1-12): ");
 				month = in.nextInt();
-				System.out.print("½Ð¿é¤J¤é: ");
+				System.out.print("ï¿½Ð¿ï¿½ï¿½Jï¿½ï¿½: ");
 				day = in.nextInt();
 				myCal.showWeekDay(year,month,day);
 				break;
-			case 4: //¿é¤J¦~¤ë¶Ç¦^¾ã¤ë
-				System.out.print("½Ð¿é¤J¦~(>0): ");
+			case 4: //ï¿½ï¿½ï¿½Jï¿½~ï¿½ï¿½ï¿½Ç¦^ï¿½ï¿½ï¿½ï¿½
+				System.out.print("ï¿½Ð¿ï¿½ï¿½Jï¿½~(>0): ");
 				year = in.nextInt();
-				System.out.print("½Ð¿é¤J¤ë(1-12): ");
+				System.out.print("ï¿½Ð¿ï¿½ï¿½Jï¿½ï¿½(1-12): ");
 				month = in.nextInt();
 				myCal.showCalendar(year, month);
 				break;
-			case 5: //¿é¤J¦~¶Ç¦^¦³´X­Ó¤»¤é
-				System.out.print("½Ð¿é¤J¦~(>0): ");
+			case 5: //ï¿½ï¿½ï¿½Jï¿½~ï¿½Ç¦^ï¿½ï¿½ï¿½Xï¿½Ó¤ï¿½ï¿½ï¿½
+				System.out.print("ï¿½Ð¿ï¿½ï¿½Jï¿½~(>0): ");
 				year = in.nextInt();
 				myCal.showWeekend(year);
 				break;
 			default:
-				System.out.println("½Ð­«·s¿ï¾Ü!");
+				System.out.println("ï¿½Ð­ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½!");
 		}
 				
 	}
