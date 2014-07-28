@@ -1,5 +1,5 @@
 /**************************************************************************
- * FileName 			[ Choice.java ]
+ * FileName				[ Choice.java ]
  * PackageName			[ calendar ]
  * JavaProjectName		[ Calendar ]
  * Synopsis				[ This file is used to select MyCalendar methods ]

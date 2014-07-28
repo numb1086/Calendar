@@ -1,5 +1,5 @@
 /**************************************************************************
- * FileName 			[ MyCalendar.java ]
+ * FileName				[ MyCalendar.java ]
  * PackageName			[ calendar ]
  * JavaProjectName		[ Calendar ]
  * Synopsis				[ This file defines the methods to show some

@@ -1,5 +1,5 @@
 /*************************************************************************
- * FileName 			[ Calendar.java ]
+ * FileName				[ Calendar.java ]
  * PackageName			[ calendar ]
  * JavaProjectName		[ Calendar ]
  * Synopsis				[ This file shows options that can be chosen.]
