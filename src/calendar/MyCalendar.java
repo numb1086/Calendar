@@ -1,10 +1,10 @@
 /**************************************************************************
- * FileName				[ MyCalendar.java ]
+ * FileName			[ MyCalendar.java ]
  * PackageName			[ calendar ]
  * JavaProjectName		[ Calendar ]
- * Synopsis				[ This file defines the methods to show some
- * 						  information about calendar]
- * Author				[ Yong-Ting (Tony) Wu ]
+ * Synopsis			[ This file defines the methods to show some
+ * 				  information about calendar]
+ * Author			[ Yong-Ting (Tony) Wu ]
  * Copyright			[ Copyleft(c) 2014 MITLAB, GIEE, NTUST, Taiwan ]
 ***************************************************************************/
 
@@ -12,123 +12,123 @@ package calendar;
 
 public class MyCalendar 
 {
-	private int monthDay[] = {31,28,31,30,31,30,31,31,30,31,30,31};//1-12¤ëªº¤Ñ¼Æ
+	private int monthDay[] = {31,28,31,30,31,30,31,31,30,31,30,31};//1-12ï¿½ëªºï¿½Ñ¼ï¿½
 	
-	//§PÂ_¸Ó¦~¬O§_¬°¶|¦~
+	//ï¿½Pï¿½_ï¿½Ó¦~ï¿½Oï¿½_ï¿½ï¿½ï¿½|ï¿½~
 	private boolean isLeapYear(int year)
 	{
 		return ((year%400==0)||((year%4==0) && (year%100!=0)));
 	}
 	
-	//¦^¶Ç¸Ó¦~¸Ó¤ëªºªÅ¥Õ¤Ñ¼Æ
+	//ï¿½^ï¿½Ç¸Ó¦~ï¿½Ó¤ëªºï¿½Å¥Õ¤Ñ¼ï¿½
 	private int getSpaceDay(int year,int month)
 	{
-		int firstSpace = 1; //¦è¤¸1¦~1¤ëªºªÅ¥Õ¤Ñ¼Æ¡Aªí¥Ü1¤ë1¤é¬°¬P´Á¤@	
-		//§PÂ_¸Ó¦~2¤ë¤Ñ¼Æ
+		int firstSpace = 1; //ï¿½è¤¸1ï¿½~1ï¿½ëªºï¿½Å¥Õ¤Ñ¼Æ¡Aï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½1ï¿½é¬°ï¿½Pï¿½ï¿½ï¿½@	
+		//ï¿½Pï¿½_ï¿½Ó¦~2ï¿½ï¿½ï¿½Ñ¼ï¿½
 		if(isLeapYear(year)) monthDay[1] = 29;
-		//§ä¥X¸Ó¦~1¤ëªºªÅ¥Õ¤Ñ¼Æ¡A¥H¦è¤¸1¦~¬°°ò·Ç
+		//ï¿½ï¿½ï¿½Xï¿½Ó¦~1ï¿½ëªºï¿½Å¥Õ¤Ñ¼Æ¡Aï¿½Hï¿½è¤¸1ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		for(int tempYear=1;tempYear<year;tempYear++)
 		{
-			//(ªÅ¥Õ¤Ñ¼Æ+¸Ó¦~¤Ñ¼Æ)%7 = ¤U¤@¦~1¤ëªºªÅ¥Õ¤Ñ¼Æ
+			//(ï¿½Å¥Õ¤Ñ¼ï¿½+ï¿½Ó¦~ï¿½Ñ¼ï¿½)%7 = ï¿½Uï¿½@ï¿½~1ï¿½ëªºï¿½Å¥Õ¤Ñ¼ï¿½
 			if(isLeapYear(tempYear)) firstSpace = (firstSpace+366)%7;
 			else firstSpace = (firstSpace+365)%7;
 		}
-		//¸Ó¦~1-12¤ëªºªÅ¥Õ¤Ñ¼Æ
+		//ï¿½Ó¦~1-12ï¿½ëªºï¿½Å¥Õ¤Ñ¼ï¿½
 		int spaceDay[] = {firstSpace,0,0,0,0,0,0,0,0,0,0,0};
-		//­pºâ¦Ü¸Ó¦~¤ë¥÷ªºªÅ¥Õ¤Ñ¼Æ¡A¨C­Ó¤ëªºªÅ¥Õ¤Ñ¼Æµ¥©ó(«e­Ó¤ëªºªÅ¥Õ¤Ñ¼Æ+«e­Ó¤ë¤Ñ¼Æ)¨ú7ªº¾l¼Æ
+		//ï¿½pï¿½ï¿½ï¿½Ü¸Ó¦~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥Õ¤Ñ¼Æ¡Aï¿½Cï¿½Ó¤ëªºï¿½Å¥Õ¤Ñ¼Æµï¿½ï¿½ï¿½(ï¿½eï¿½Ó¤ëªºï¿½Å¥Õ¤Ñ¼ï¿½+ï¿½eï¿½Ó¤ï¿½ï¿½Ñ¼ï¿½)ï¿½ï¿½7ï¿½ï¿½ï¿½lï¿½ï¿½
 		for(int i=0;i<month-1;i++)
 			spaceDay[i+1] = (spaceDay[i]+monthDay[i])%7;
 		return spaceDay[month-1];
 	}
 	
-	//¦L¥X¬O§_¬°¶|¦~
+	//ï¿½Lï¿½Xï¿½Oï¿½_ï¿½ï¿½ï¿½|ï¿½~
 	public void showLeapYear(int year)
 	{
-		if(year==0) { //§PÂ_¬O§_®æ¦¡¿ù»~
-			System.out.println("¿é¤J®æ¦¡¿ù»~");
+		if(year==0) { //ï¿½Pï¿½_ï¿½Oï¿½_ï¿½æ¦¡ï¿½ï¿½ï¿½~
+			System.out.println("ï¿½ï¿½ï¿½Jï¿½æ¦¡ï¿½ï¿½ï¿½~");
 		}else{
-			if(isLeapYear(year)) System.out.println(year + "¦~¬O¶|¦~");
-			else  System.out.println(year + "¦~¤£¬O¶|¦~");
+			if(isLeapYear(year)) System.out.println(year + "ï¿½~ï¿½Oï¿½|ï¿½~");
+			else  System.out.println(year + "ï¿½~ï¿½ï¿½ï¿½Oï¿½|ï¿½~");
 		}
 	}
 	
-	//¦L¥X¸Ó¦~¸Ó¤ë¤Ñ¼Æ
+	//ï¿½Lï¿½Xï¿½Ó¦~ï¿½Ó¤ï¿½ï¿½Ñ¼ï¿½
 	public void showDays(int year,int month)
 	{
-		if(year==0 || 0==month || month>12) { //§PÂ_¬O§_®æ¦¡¿ù»~
-			System.out.println("¿é¤J®æ¦¡¿ù»~");
+		if(year==0 || 0==month || month>12) { //ï¿½Pï¿½_ï¿½Oï¿½_ï¿½æ¦¡ï¿½ï¿½ï¿½~
+			System.out.println("ï¿½ï¿½ï¿½Jï¿½æ¦¡ï¿½ï¿½ï¿½~");
 		}else {
-			//§PÂ_¸Ó¦~2¤ë¤Ñ¼Æ
+			//ï¿½Pï¿½_ï¿½Ó¦~2ï¿½ï¿½ï¿½Ñ¼ï¿½
 			if(isLeapYear(year)) monthDay[1] = 29;
-			System.out.print(year+" ¦~ "+month+" ¤ë");
-			System.out.println(" ¦@¦³ "+ monthDay[month-1]+ " ¤Ñ");
+			System.out.print(year+" ï¿½~ "+month+" ï¿½ï¿½");
+			System.out.println(" ï¿½@ï¿½ï¿½ "+ monthDay[month-1]+ " ï¿½ï¿½");
 		}
 	}
 	
-	//¦L¥X¸Ó¦~¸Ó¤ë¸Ó¤é¬P´Á´X
+	//ï¿½Lï¿½Xï¿½Ó¦~ï¿½Ó¤ï¿½ï¿½Ó¤ï¿½ï¿½Pï¿½ï¿½ï¿½X
 	public void showWeekDay(int year,int month,int day)
 	{
-		//§PÂ_¸Ó¦~2¤ë¤Ñ¼Æ
+		//ï¿½Pï¿½_ï¿½Ó¦~2ï¿½ï¿½ï¿½Ñ¼ï¿½
 		if(isLeapYear(year)) monthDay[1] = 29;
-		//§PÂ_¬O§_®æ¦¡¿ù»~
+		//ï¿½Pï¿½_ï¿½Oï¿½_ï¿½æ¦¡ï¿½ï¿½ï¿½~
 		if(year==0 || 0==month || month>12 || day>monthDay[month-1]) { 
-			System.out.println("¿é¤J®æ¦¡¿ù»~");
+			System.out.println("ï¿½ï¿½ï¿½Jï¿½æ¦¡ï¿½ï¿½ï¿½~");
 		}else{
-			String[] week = {"¤é","¤@","¤G","¤T","¥|","¤­","¤»"};
-			//¬P´Á´X = (¸Ó¤ëªÅ¥Õ¤Ñ¼Æ+¸Ó¸¹»P1¸¹ªº®t¶Z)¨ú7ªº¾l¼Æ
+			String[] week = {"ï¿½ï¿½","ï¿½@","ï¿½G","ï¿½T","ï¿½|","ï¿½ï¿½","ï¿½ï¿½"};
+			//ï¿½Pï¿½ï¿½ï¿½X = (ï¿½Ó¤ï¿½ï¿½Å¥Õ¤Ñ¼ï¿½+ï¿½Ó¸ï¿½ï¿½P1ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½Z)ï¿½ï¿½7ï¿½ï¿½ï¿½lï¿½ï¿½
 			int weekDay = (getSpaceDay(year,month)+day-1)%7;
-			System.out.print(year+"¦~"+month+"¤ë" + day+"¤é");
-			System.out.println("¬O¬P´Á"+ week[weekDay]);
+			System.out.print(year+"ï¿½~"+month+"ï¿½ï¿½" + day+"ï¿½ï¿½");
+			System.out.println("ï¿½Oï¿½Pï¿½ï¿½"+ week[weekDay]);
 		}
 	}
 	
-	//¦L¥X¤é¾ä
+	//ï¿½Lï¿½Xï¿½ï¿½ï¿½ï¿½
 	public void showCalendar(int year,int month)
 	{
-		if(year==0 || 0==month || month>12) { //§PÂ_¬O§_®æ¦¡¿ù»~
-			System.out.println("¿é¤J®æ¦¡¿ù»~");
+		if(year==0 || 0==month || month>12) { //ï¿½Pï¿½_ï¿½Oï¿½_ï¿½æ¦¡ï¿½ï¿½ï¿½~
+			System.out.println("ï¿½ï¿½ï¿½Jï¿½æ¦¡ï¿½ï¿½ï¿½~");
 		}else{
 			int spaceDay = getSpaceDay(year,month);
 			
-			System.out.println("\n----------"+year+"¦~"+ month+"¤ë"+"-----------");
+			System.out.println("\n----------"+year+"ï¿½~"+ month+"ï¿½ï¿½"+"-----------");
 			System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
-			//¥ý¦L¥X¸Ó¤ëªÅ¥Õ¤Ñ¼Æ
+			//ï¿½ï¿½ï¿½Lï¿½Xï¿½Ó¤ï¿½ï¿½Å¥Õ¤Ñ¼ï¿½
 			for(int i=0;i<spaceDay;i++) 
 				System.out.printf("%4s"," ");
-			//¦b¦L¥X¸Ó¤ë¤Ñ¼Æ
+			//ï¿½bï¿½Lï¿½Xï¿½Ó¤ï¿½ï¿½Ñ¼ï¿½
 			for(int day=1;day<=monthDay[month-1];day++) 
 			{
 				System.out.printf("%4d",day);
-				//¸Ó¤é%7ªº¾l¼Æ·|µ¥©ó²Ä¤@­ÓÂ§«ô´«¦æªº¤é¤l(=7-ªÅ¥Õ¤Ñ¼Æ)
-				if(day%7 == (7-spaceDay)%7) //spaceDay¥i¯àµ¥©ó0©Ò¥H­n%7
+				//ï¿½Ó¤ï¿½%7ï¿½ï¿½ï¿½lï¿½Æ·|ï¿½ï¿½ï¿½ï¿½ï¿½Ä¤@ï¿½ï¿½Â§ï¿½ï¿½ï¿½ï¿½ï¿½æªºï¿½ï¿½ï¿½l(=7-ï¿½Å¥Õ¤Ñ¼ï¿½)
+				if(day%7 == (7-spaceDay)%7) //spaceDayï¿½iï¿½àµ¥ï¿½ï¿½0ï¿½Ò¥Hï¿½n%7
 					System.out.println();
 			}
 		}
 	}
 	
-	//¦L¥X¸Ó¦~¦³´X­Ó¤»¤é
+	//ï¿½Lï¿½Xï¿½Ó¦~ï¿½ï¿½ï¿½Xï¿½Ó¤ï¿½ï¿½ï¿½
 	public void showWeekend(int year)
 	{
-		int countSat = 0;//¦³´X­Ó¬P´Á¤»
-		int countSun = 0;//¦³´X­Ó¬P´Á¤é
-		int weekDay;//§PÂ_¬P´Á´X
-		if(year==0) { //§PÂ_¬O§_®æ¦¡¿ù»~
-			System.out.println("¿é¤J®æ¦¡¿ù»~");
+		int countSat = 0;//ï¿½ï¿½ï¿½Xï¿½Ó¬Pï¿½ï¿½ï¿½ï¿½
+		int countSun = 0;//ï¿½ï¿½ï¿½Xï¿½Ó¬Pï¿½ï¿½ï¿½ï¿½
+		int weekDay;//ï¿½Pï¿½_ï¿½Pï¿½ï¿½ï¿½X
+		if(year==0) { //ï¿½Pï¿½_ï¿½Oï¿½_ï¿½æ¦¡ï¿½ï¿½ï¿½~
+			System.out.println("ï¿½ï¿½ï¿½Jï¿½æ¦¡ï¿½ï¿½ï¿½~");
 		}else{
-			//§PÂ_¸Ó¦~2¤ë¤Ñ¼Æ
+			//ï¿½Pï¿½_ï¿½Ó¦~2ï¿½ï¿½ï¿½Ñ¼ï¿½
 			if(isLeapYear(year)) monthDay[1] = 29;
-			//­pºâ¦³´X­Ó¤»¤é
+			//ï¿½pï¿½â¦³ï¿½Xï¿½Ó¤ï¿½ï¿½ï¿½
 			for(int month=1;month<=12;month++)
 			{
 				for(int day=1;day<=monthDay[month-1];day++)
 				{	
-					//¬P´Á´X = (¸Ó¤ëªÅ¥Õ¤Ñ¼Æ+¸Ó¸¹»P1¸¹ªº®t¶Z)¨ú7ªº¾l¼Æ
+					//ï¿½Pï¿½ï¿½ï¿½X = (ï¿½Ó¤ï¿½ï¿½Å¥Õ¤Ñ¼ï¿½+ï¿½Ó¸ï¿½ï¿½P1ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½Z)ï¿½ï¿½7ï¿½ï¿½ï¿½lï¿½ï¿½
 					weekDay = (getSpaceDay(year,month)+day-1)%7;
 					if(weekDay==6) countSat++;
 					if(weekDay==0) countSun++;
 				}
 			}	
-			System.out.println(year +"¦~¦@¦³"+countSat+"­Ó¬P´Á¤»" + countSun+"­Ó¬P´Á¤é");
+			System.out.println(year +"ï¿½~ï¿½@ï¿½ï¿½"+countSat+"ï¿½Ó¬Pï¿½ï¿½ï¿½ï¿½" + countSun+"ï¿½Ó¬Pï¿½ï¿½ï¿½ï¿½");
 		}
 	}
 }
