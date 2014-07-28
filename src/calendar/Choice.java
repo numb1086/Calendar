@@ -1,4 +1,13 @@
-package cld;
+/**************************************************************************
+ * FileName 			[ Choice.java ]
+ * PackageName			[ calendar ]
+ * JavaProjectName		[ Calendar ]
+ * Synopsis				[ This file is used to select MyCalendar methods ]
+ * Author				[ Yong-Ting (Tony) Wu ]
+ * Copyright			[ Copyleft(c) 2014 MITLAB, GIEE, NTUST, Taiwan ]
+***************************************************************************/
+
+package calendar;
 
 import java.util.Scanner;
 

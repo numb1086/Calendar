@@ -21,7 +21,7 @@
  
       by 100,it is a leap year.
 
-3.firstSpace()
+3.getSpaceDay()
   ->Calculate the space day of the month in the year we selected.
 
 4.showLeapYear()

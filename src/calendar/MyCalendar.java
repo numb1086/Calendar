@@ -1,4 +1,14 @@
-package cld;
+/**************************************************************************
+ * FileName 			[ MyCalendar.java ]
+ * PackageName			[ calendar ]
+ * JavaProjectName		[ Calendar ]
+ * Synopsis				[ This file defines the methods to show some
+ * 						  information about calendar]
+ * Author				[ Yong-Ting (Tony) Wu ]
+ * Copyright			[ Copyleft(c) 2014 MITLAB, GIEE, NTUST, Taiwan ]
+***************************************************************************/
+
+package calendar;
 
 public class MyCalendar 
 {
@@ -10,8 +20,8 @@ public class MyCalendar
 		return ((year%400==0)||((year%4==0) && (year%100!=0)));
 	}
 	
-	//計算該年該月的空白天數
-	private int firstSpace(int year,int month)
+	//回傳該年該月的空白天數
+	private int getSpaceDay(int year,int month)
 	{
 		int firstSpace = 1; //西元1年1月的空白天數，表示1月1日為星期一	
 		//判斷該年2月天數
@@ -60,13 +70,13 @@ public class MyCalendar
 	{
 		//判斷該年2月天數
 		if(isLeapYear(year)) monthDay[1] = 29;
-		
-		if(year==0 || 0==month || month>12 || day>monthDay[month-1]) { //判斷是否格式錯誤
+		//判斷是否格式錯誤
+		if(year==0 || 0==month || month>12 || day>monthDay[month-1]) { 
 			System.out.println("輸入格式錯誤");
 		}else{
 			String[] week = {"日","一","二","三","四","五","六"};
 			//星期幾 = (該月空白天數+該號與1號的差距)取7的餘數
-			int weekDay = (firstSpace(year,month)+ day-1)%7;
+			int weekDay = (getSpaceDay(year,month)+day-1)%7;
 			System.out.print(year+"年"+month+"月" + day+"日");
 			System.out.println("是星期"+ week[weekDay]);
 		}
@@ -78,7 +88,7 @@ public class MyCalendar
 		if(year==0 || 0==month || month>12) { //判斷是否格式錯誤
 			System.out.println("輸入格式錯誤");
 		}else{
-			int spaceDay = firstSpace(year,month);
+			int spaceDay = getSpaceDay(year,month);
 			
 			System.out.println("\n----------"+year+"年"+ month+"月"+"-----------");
 			System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
@@ -111,8 +121,9 @@ public class MyCalendar
 			for(int month=1;month<=12;month++)
 			{
 				for(int day=1;day<=monthDay[month-1];day++)
-				{
-					weekDay = (firstSpace(year,month)+ day-1)%7;
+				{	
+					//星期幾 = (該月空白天數+該號與1號的差距)取7的餘數
+					weekDay = (getSpaceDay(year,month)+day-1)%7;
 					if(weekDay==6) countSat++;
 					if(weekDay==0) countSun++;
 				}
