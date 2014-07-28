@@ -1,12 +1,12 @@
-﻿/**************************************************************************
- * FileName				[ MyCalendar.java ]
- * PackageName			[ calendar ]
- * JavaProjectName		[ Calendar ]
- * Synopsis				[ This file defines the methods to show some
- * 						  information about calendar]
- * Author				[ Yong-Ting (Tony) Wu ]
- * Copyright			[ Copyleft(c) 2014 MITLAB, GIEE, NTUST, Taiwan ]
-***************************************************************************/
+﻿/**********************************************************************
+ * FileName       	[ MyCalendar.java ]
+ * PackageName    	[ calendar ]
+ * JavaProjectName	[ Calendar ]
+ * Synopsis       	[ This file defines the methods to show some
+ *                	  information about calendar]
+ * Author         	[ Yong-Ting (Tony) Wu ]
+ * Copyright      	[ Copyleft(c) 2014 MITLAB, GIEE, NTUST, Taiwan ]
+************************************************************************/
 
 package calendar;
 
