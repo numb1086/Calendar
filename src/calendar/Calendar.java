@@ -1,9 +1,9 @@
 /*************************************************************************
- * FileName				[ Calendar.java ]
+ * FileName			[ Calendar.java ]
  * PackageName			[ calendar ]
  * JavaProjectName		[ Calendar ]
- * Synopsis				[ This file shows options that can be chosen.]
- * Author				[ Yong-Ting (Tony) Wu ]
+ * Synopsis			[ This file shows options that can be chosen.]
+ * Author			[ Yong-Ting (Tony) Wu ]
  * Copyright			[ Copyleft(c) 2014 MITLAB, GIEE, NTUST, Taiwan ]
 **************************************************************************/
 
@@ -17,9 +17,9 @@ public class Calendar
 	{
 		int mode;
 		Scanner in = new Scanner(System.in);
-		System.out.println("1.§PÂ_¬O§_¬°¶|¦~  2.¿é¤J¦~¤ë¶Ç¦^¦³´X¤Ñ  3.¿é¤J¦~¤ë¤é¶Ç¦^¬P´Á´X "
-							+ " 4.¿é¤J¦~¤ë¶Ç¦^¾ã¤ë  5.¿é¤J¦~¶Ç¦^¦³´X­Ó¤»¤é");
-		System.out.print("½Ð¿ï¾Ü: ");
+		System.out.println("1.ï¿½Pï¿½_ï¿½Oï¿½_ï¿½ï¿½ï¿½|ï¿½~  2.ï¿½ï¿½ï¿½Jï¿½~ï¿½ï¿½ï¿½Ç¦^ï¿½ï¿½ï¿½Xï¿½ï¿½  3.ï¿½ï¿½ï¿½Jï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½Ç¦^ï¿½Pï¿½ï¿½ï¿½X "
+							+ " 4.ï¿½ï¿½ï¿½Jï¿½~ï¿½ï¿½ï¿½Ç¦^ï¿½ï¿½ï¿½ï¿½  5.ï¿½ï¿½ï¿½Jï¿½~ï¿½Ç¦^ï¿½ï¿½ï¿½Xï¿½Ó¤ï¿½ï¿½ï¿½");
+		System.out.print("ï¿½Ð¿ï¿½ï¿½ï¿½: ");
 		mode = in.nextInt();
 		Choice ch = new Choice(mode);
 		ch.choice(in);
