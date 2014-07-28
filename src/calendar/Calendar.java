@@ -1,9 +1,9 @@
-/*************************************************************************
- * FileName			[ Calendar.java ]
+﻿/*************************************************************************
+ * FileName				[ Calendar.java ]
  * PackageName			[ calendar ]
  * JavaProjectName		[ Calendar ]
- * Synopsis			[ This file shows options that can be chosen.]
- * Author			[ Yong-Ting (Tony) Wu ]
+ * Synopsis				[ This file shows options that can be chosen.]
+ * Author				[ Yong-Ting (Tony) Wu ]
  * Copyright			[ Copyleft(c) 2014 MITLAB, GIEE, NTUST, Taiwan ]
 **************************************************************************/
 
@@ -17,9 +17,9 @@ public class Calendar
 	{
 		int mode;
 		Scanner in = new Scanner(System.in);
-		System.out.println("1.�P�_�O�_���|�~  2.���J�~���Ǧ^���X��  3.���J�~�����Ǧ^�P���X "
-							+ " 4.���J�~���Ǧ^����  5.���J�~�Ǧ^���X�Ӥ���");
-		System.out.print("�п���: ");
+		System.out.println("1.判斷是否為閏年  2.輸入年月傳回有幾天  3.輸入年月日傳回星期幾 "
+							+ " 4.輸入年月傳回整月  5.輸入年傳回有幾個六日");
+		System.out.print("請選擇: ");
 		mode = in.nextInt();
 		Choice ch = new Choice(mode);
 		ch.choice(in);
